@@ -1,5 +1,7 @@
 
-<img align="center" src="/public/logo.png">
+<p align="center">
+  <img src="./public/logo.png" alt="Logo" width="300">
+</p>
 
 # Jaspea - Joint Architecture for Simulation, Planning, Execution, and Autonomy
 
