@@ -1,45 +1,13 @@
-resolver: lts-21.11  # Choose the latest stable LTS version
+resolver: lts-21.11
 
 packages:
-  - src
+    - src  # Uses the package.yaml in folder src
 
 extra-deps:
-  - alex-3.2.7   # For lexical analysis
-  - happy-1.20.0 # For syntax analysis
-  - hlint-3.3.6  # For static analysis
-  - text-2.0     # For efficient string management
-  - mtl-2.3.1    # For stacked monads (State, Either, Reader)
-
-extra-package-dbs: []
+    - alex-3.2.7       # For lexical analysis
+    - happy-1.20.0     # For syntax analysis
+    - hlint-3.3.6      # For static analysis
 
 flags: {}
 
-ghc-options:
-  "$everything": -Wall -Werror -O2  # Activate all warnings and treat them as errors
-
-allow-newer: true
-
-extra-include-dirs: []
-extra-lib-dirs: []
-
-# To include HLint as a tool in the project
-curated: true
-install-ghc: true
-
-# Configuration pour stack exec
-stack-exec:
-  - hlint
-
-# Command to run REPL in CLI
-executables:
-  - jaspea
-
-# Project testing
-test:
-  framework: hspec
-
-# Scripts for exporting results
-scripts:
-  lint: stack exec hlint src test
-  test: stack test
-  build: stack build
+extra-package-dbs: []

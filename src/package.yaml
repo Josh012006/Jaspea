@@ -4,29 +4,58 @@ license: MIT
 author: Josué Mongan
 maintainer: josuesmjr.mongan@gmail.com
 synopsis: A graphical modeling language for robotics
+category: Development
 
-dependencies:
-  - base >= 4.14 && < 5
-  - text
-  - mtl
-  - parsec
+description: |
+    Jaspea is a domain-specific language (DSL) for modeling,
+    simulating, and visualizing robotic systems using graphs.
+
+library:
+    source-dirs: src
+    exposed-modules:
+        - Lexer.Lexer
+        - Parser.Parser
+        - AST.AST
+        - Types.Types
+        - Semantics.Checker
+        - Simulator.Simulator
+        - Export.ExportDot
+        - Export.ExportROS
+        - Export.ExportGazebo
+        - Graph.Render
+        - REPL.REPL
+        - Utils.Utils
+    dependencies:
+        - base >= 4.14 && < 5
+        - text
+        - mtl
+        - parsec
+        - alex
+        - happy
 
 executables:
-  jaspea:
-    main: app/Main.hs
-    ghc-options: -threaded -rtsopts -with-rtsopts=-N
-    dependencies:
-      - base
-      - text
-      - mtl
-      - parsec
+    jaspea:
+        main: app/Main.hs
+        source-dirs: .
+        ghc-options:
+            - -threaded
+            - -rtsopts
+            - -with-rtsopts=-N
+        dependencies:
+            - jaspea
+            - text
+            - mtl
+            - parsec
 
 tests:
-  jaspea-test:
-    main: test/Spec.hs
-    ghc-options: -threaded -rtsopts -with-rtsopts=-N
-    dependencies:
-      - base
-      - text
-      - mtl
-      - parsec
+    jaspea-test:
+        main: test/SimulatorTest.hs
+        source-dirs: .
+        ghc-options:
+            - -threaded
+            - -rtsopts
+            - -with-rtsopts=-N
+        dependencies:
+            - jaspea
+            - HUnit
+            - QuickCheck
