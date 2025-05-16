@@ -30,8 +30,6 @@ library:
         - text
         - mtl
         - parsec
-        - alex
-        - happy
 
 executables:
     jaspea:
@@ -46,6 +44,9 @@ executables:
             - text
             - mtl
             - parsec
+        build-tools:
+            - alex
+            - happy
 
 tests:
     jaspea-test:
@@ -59,3 +60,5 @@ tests:
             - jaspea
             - HUnit
             - QuickCheck
+        build-tools:
+            - happy

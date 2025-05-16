@@ -1,13 +1,13 @@
 resolver: lts-21.11
 
 packages:
-    - src  # Uses the package.yaml in folder src
+    - src        # Folder containing package.yaml
 
-extra-deps:
-    - alex-3.2.7       # For lexical analysis
-    - happy-1.20.0     # For syntax analysis
-    - hlint-3.3.6      # For static analysis
-
+extra-deps: []
 flags: {}
-
 extra-package-dbs: []
+
+
+build-tools:
+    - alex
+    - happy
