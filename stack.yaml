@@ -1,13 +1,9 @@
 resolver: lts-21.11
 
+# Put package.yaml at the root directory for simplicity
 packages:
-    - src        # Folder containing package.yaml
+    - .         # root folder containing package.yaml
 
 extra-deps: []
 flags: {}
 extra-package-dbs: []
-
-
-build-tools:
-    - alex
-    - happy

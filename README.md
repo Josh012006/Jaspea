@@ -45,9 +45,8 @@ jaspea/
 │   │   └── Render.hs
 │   ├── REPL/              # Interactive Read-Eval-Print Loop
 │   │   └── REPL.hs
-│   ├── Utils/             # Helper modules (monads, parsers)
-│   │   └── Utils.hs
-│   └── package.yaml       # Informations on the package
+│   └── Utils/             # Helper modules (monads, parsers)
+│       └── Utils.hs
 ├── examples/              # Example Jaspea scripts for robotics
 │   └── mobile_robot.jas
 ├── test/                  # Unit and integration tests
@@ -63,6 +62,7 @@ jaspea/
 │   └── logo.png
 ├── README.md              # This document
 ├── LICENSE                # Project license
+├── package.yaml           # Informations on the package
 └── stack.yaml             # Haskell Stack configuration
 ```
 

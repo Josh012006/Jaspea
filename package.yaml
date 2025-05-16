@@ -1,0 +1,56 @@
+# package.yaml (at the root)
+name: jaspea
+version: 0.1.0.0
+license: MIT
+author: Josué Mongan
+maintainer: josuesmjr.mongan@gmail.com
+synopsis: DSL for robotic modeling
+category: Development
+
+description: |
+    Jaspea is a DSL for modeling, simulating, and visualizing robotic systems.
+
+# Library configuration
+library:
+    source-dirs:
+        - src
+    exposed-modules:
+        []
+    dependencies:
+        - base >= 4.14 && < 5
+        - text
+        - mtl
+        - parsec
+    build-tool-depends:
+        - alex:alex
+        - happy:happy
+
+# Main executable
+executables:
+    jaspea:
+        main: Main.hs          # located in app/
+        source-dirs:
+            - app
+        ghc-options: []
+        dependencies:
+            - jaspea
+            - text
+            - mtl
+            - parsec
+        build-tool-depends:
+            - alex:alex
+            - happy:happy
+
+# Test suite
+tests:
+    jaspea-test:
+        main: SimulatorTest.hs      # located in test/
+        source-dirs:
+            - test
+        ghc-options: []
+        dependencies:
+            - jaspea
+            - HUnit
+            - QuickCheck
+        build-tool-depends:
+            - happy:happy
