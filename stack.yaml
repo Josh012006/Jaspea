@@ -1,9 +1,10 @@
 resolver: lts-21.11
 
-# Put package.yaml at the root directory for simplicity
 packages:
-    - .         # root folder containing package.yaml
+  - .
 
-extra-deps: []
+extra-deps:
+  - parsec-3.1.18.0@sha256:dfbb9835b8abc966b6bbd34340ef5122227b4cf4480062b85ca4c4704f054f98,4535
+
 flags: {}
 extra-package-dbs: []
